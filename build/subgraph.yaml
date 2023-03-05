@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Pool
@@ -21,7 +21,7 @@ dataSources:
         - WithdrawReady
       abis:
         - name: Pool
-          file: ./abis/Pool.json
+          file: Pool/abis/Pool.json
       eventHandlers:
         - event: Deposit(indexed uint256,indexed address,uint256)
           handler: handleDeposit
@@ -33,4 +33,4 @@ dataSources:
           handler: handleWithdraw
         - event: WithdrawReady(indexed uint256,indexed address,indexed uint256,uint256,uint256)
           handler: handleWithdrawReady
-      file: ./src/pool.ts
+      file: Pool/Pool.wasm
